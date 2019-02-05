@@ -1,15 +1,9 @@
-﻿
+﻿using UnityEngine;
+
 public class GameplayState : GameState
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void enterState(GameController gamecontroller, GameState previousState = null)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("Entered gameplay state.");
     }
 }
