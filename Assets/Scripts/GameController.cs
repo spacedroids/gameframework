@@ -13,9 +13,9 @@ public class GameController : MonoSingleton<GameController> {
 	//Shouldn't be directly modified, except by GameState subclasses.
 	public GameState currentState;
 
-	public GameState TitleScreen;
+	public GameState TitleScreenState;
 	public GameState GameplayState;
-	public GameState Loading;
+	public GameState LoadingState;
 
 	public GameState nextStateOnLoaded;
 
@@ -34,11 +34,11 @@ public class GameController : MonoSingleton<GameController> {
 
 	//Instantiate each of the state subclasses. We want to do this once and keep the same copy, every state change just reuses the object.
 	private void instantiateStateClasses(){
-		//TitleScreen = new TitleScreen();
+        TitleScreenState = new TitleScreenState();
 		GameplayState = new GameplayState();
-		//IntroToGameplay = new IntroToGameplay();
-		//Homebase = new Homebase();
-		//Loading = new Loading();
+        //IntroToGameplay = new IntroToGameplay();
+        //Homebase = new Homebase();
+        LoadingState = new LoadingState();
 		//LevelSelect = new LevelSelect();
 		//EngineTest = new EngineTest();
 	}
@@ -59,11 +59,12 @@ public class GameController : MonoSingleton<GameController> {
 		instantiateStateClasses();
 		//If curretState is null, then we're in a pre-initialized state
 		if(currentState == null) {
+            //This looks up the scene filename and maps it to a game state.
 			string lvlname = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
 			if(lvlname == "Gameplay") {
 				currentState = GameplayState;
 			} else if(lvlname == "TitleScreen") {
-				currentState = TitleScreen;
+				currentState = TitleScreenState;
 			} else {
 				Debug.LogError("Could not find a matching game state to start in for the scene " + lvlname);
 			}
@@ -80,10 +81,8 @@ public class GameController : MonoSingleton<GameController> {
 	}
 
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-		if (currentState != null) {
-			if(currentState == Loading) {
-				currentState.changeState(nextStateOnLoaded, this);
-			}
+		if (currentState != null && currentState == LoadingState) {
+			currentState.changeState(nextStateOnLoaded, this);
 		}
 	}
 
