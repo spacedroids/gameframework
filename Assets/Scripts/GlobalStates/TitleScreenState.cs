@@ -5,17 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreenState : GameState
 {
-    public override void enterState(GameController gamecontroller, GameState previousState = null)
+    public override void enterState(GameController gc, GameState previousState = null)
     {
         Debug.Log("Entered TitleScreen state.");
     }
 
-    public override void doUpdate(GameController gamecontroller)
+    public override void doUpdate(GameController gc)
     {
-        if(gamecontroller.newGamePressed) {
-            gamecontroller.newGamePressed = false;
-            gamecontroller.nextStateOnLoaded = gamecontroller.GameplayState;
-            changeState(gamecontroller.LoadingState, gamecontroller);
+        if(gc.newGamePressed) {
+            gc.newGamePressed = false;
+            gc.nextStateOnLoaded = gc.GameplayState;
+            changeState(gc.LoadingState, gc);
             SceneManager.LoadScene("Gameplay");
         }
     }

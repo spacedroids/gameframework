@@ -694,7 +694,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 703265119}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 710938933}
+        m_MethodName: QuitButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &703265119
@@ -767,6 +778,7 @@ MonoBehaviour:
   gamePlayCanvas: {fileID: 935897386}
   pauseButtonPressed: 0
   unPauseButtonPressed: 0
+  quitButtonPressed: 0
 --- !u!4 &710938934
 Transform:
   m_ObjectHideFlags: 0

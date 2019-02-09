@@ -14,6 +14,7 @@ public class GameplaySceneManager : MonoBehaviour
 
     public bool pauseButtonPressed;
     public bool unPauseButtonPressed;
+    public bool quitButtonPressed;
 
     private void InstantiateInGameStates()
     {
@@ -40,5 +41,9 @@ public class GameplaySceneManager : MonoBehaviour
     public void UnPauseButtonClick()
     {
         unPauseButtonPressed = true;
+    }
+
+    public void QuitButtonClick() {
+        quitButtonPressed = true;
     }
 }
