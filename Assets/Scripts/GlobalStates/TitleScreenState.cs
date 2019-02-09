@@ -12,7 +12,8 @@ public class TitleScreenState : GameState
 
     public override void doUpdate(GameController gamecontroller)
     {
-        if(gamecontroller.navGameplayRequested) {
+        if(gamecontroller.newGamePressed) {
+            gamecontroller.newGamePressed = false;
             gamecontroller.nextStateOnLoaded = gamecontroller.GameplayState;
             changeState(gamecontroller.LoadingState, gamecontroller);
             SceneManager.LoadScene("Gameplay");

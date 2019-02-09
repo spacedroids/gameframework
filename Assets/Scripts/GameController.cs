@@ -23,14 +23,7 @@ public class GameController : MonoSingleton<GameController> {
 	//public DataStore storage;
 
 	//Navigation/Event Flags
-	public bool navHomebaseRequested;
-	public bool navLevelSelectRequested;
-	public bool smugglerCaught;
-	public bool smugglerWarped;
-	public bool playerDead;
-	public bool playerWarped;
-	public float distanceToTarget;
-	public bool navGameplayRequested;
+	public bool newGamePressed;
 
 	//Instantiate each of the state subclasses. We want to do this once and keep the same copy, every state change just reuses the object.
 	private void InstantiateStateClasses(){
@@ -60,30 +53,6 @@ public class GameController : MonoSingleton<GameController> {
 			}
 			currentState.enterState(this);
 		}
-	}
-
-    public void reset() {
-		//restart = true;
-	}
-
-	public void gotoGameplay() {
-		navGameplayRequested = true;
-	}
-
-	public void gotoHomebase() {
-		navHomebaseRequested = true;
-	}
-
-	public void gotoLevelSelect() {
-		navLevelSelectRequested = true;
-	}
-
-	public void notifySmugglerCaught() {
-		smugglerCaught = true;
-	}
-
-	public void notifySmugglerWarped() {
-		smugglerWarped = true;
 	}
 
     void Update()

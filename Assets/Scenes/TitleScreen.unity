@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 1526513009}
   - component: {fileID: 1526513008}
   m_Layer: 5
-  m_Name: Button
+  m_Name: NewGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -452,7 +452,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 817685452}
-        m_MethodName: startNewGame
+        m_MethodName: NewGameButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

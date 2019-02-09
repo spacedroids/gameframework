@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TitleScreenCanvas : MonoBehaviour
 {
-    public void startNewGame()
+    public void NewGameButtonClick()
     {
-        GameController.Instance.gotoGameplay();
+        GameController.Instance.newGamePressed = true;
     }
 }
