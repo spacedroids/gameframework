@@ -72,21 +72,7 @@ public class GameController : MonoSingleton<GameController> {
 		}
 	}
 
-	void OnEnable() {
-		SceneManager.sceneLoaded += OnSceneLoaded;
-	}
-
-	void OnDisable() {
-		SceneManager.sceneLoaded -= OnSceneLoaded;
-	}
-
-	private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-		if (currentState != null && currentState == LoadingState) {
-			currentState.changeState(nextStateOnLoaded, this);
-		}
-	}
-
-	public void reset() {
+    public void reset() {
 		//restart = true;
 	}
 
