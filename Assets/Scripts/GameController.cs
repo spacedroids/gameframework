@@ -33,30 +33,20 @@ public class GameController : MonoSingleton<GameController> {
 	public bool navGameplayRequested;
 
 	//Instantiate each of the state subclasses. We want to do this once and keep the same copy, every state change just reuses the object.
-	private void instantiateStateClasses(){
+	private void InstantiateStateClasses(){
         TitleScreenState = new TitleScreenState();
-		GameplayState = new GameplayState();
-        //IntroToGameplay = new IntroToGameplay();
-        //Homebase = new Homebase();
+        GameplayState = new GameplayState();
         LoadingState = new LoadingState();
-		//LevelSelect = new LevelSelect();
-		//EngineTest = new EngineTest();
 	}
 
 	protected override void Awake() {
-		//storage = new DataStore();
-
-		//Load turret prefabs
-		//emptyTurretMountPrefab = (Resources.Load("Weapons/Turrets/EmptyTurretMount") as GameObject).GetComponent<Turret>();
-		//lightBoltTurretPrefab = (Resources.Load("Weapons/Turrets/LightBoltTurret") as GameObject).GetComponent<Turret>();
-
 		//Base 'MonoSingleton' class will setup this object as `DontDestroyOnLoad`
 		base.Awake();
 	}
 
 	void Start() {
 		Application.targetFrameRate = 60;
-		instantiateStateClasses();
+		InstantiateStateClasses();
 		//If curretState is null, then we're in a pre-initialized state
 		if(currentState == null) {
             //This looks up the scene filename and maps it to a game state.

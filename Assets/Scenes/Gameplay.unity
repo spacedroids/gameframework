@@ -486,7 +486,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 592182001}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 710938933}
+        m_MethodName: PauseButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &592182001
@@ -555,6 +566,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65660075efdfc4109b3bbf428fb1b974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseCanvas: {fileID: 1319274043}
+  gamePlayCanvas: {fileID: 935897390}
+  pauseButtonPressed: 0
+  unPauseButtonPressed: 0
 --- !u!4 &710938934
 Transform:
   m_ObjectHideFlags: 0
@@ -683,12 +698,12 @@ GameObject:
   - component: {fileID: 1319274042}
   - component: {fileID: 1319274041}
   m_Layer: 5
-  m_Name: PauseMenu
+  m_Name: PauseCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1319274040
 RectTransform:
   m_ObjectHideFlags: 0
@@ -755,7 +770,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319274039}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -782,7 +797,7 @@ GameObject:
   - component: {fileID: 1807416778}
   - component: {fileID: 1807416777}
   m_Layer: 5
-  m_Name: ResumeButton
+  m_Name: UnPauseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -847,7 +862,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1807416778}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 710938933}
+        m_MethodName: UnPauseButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1807416778
