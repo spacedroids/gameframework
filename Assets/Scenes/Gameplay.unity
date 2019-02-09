@@ -566,8 +566,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65660075efdfc4109b3bbf428fb1b974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseCanvas: {fileID: 1319274043}
-  gamePlayCanvas: {fileID: 935897390}
+  pauseCanvas: {fileID: 1319274039}
+  gamePlayCanvas: {fileID: 935897386}
   pauseButtonPressed: 0
   unPauseButtonPressed: 0
 --- !u!4 &710938934
